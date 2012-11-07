@@ -20,6 +20,7 @@
 *.vcxproj
 *.user
 *.filters
-/Debug
-/ipch
-/cpp2week.sdf
+*.opensdf
+Debug/
+ipch/
+cpp2week.sdf/
