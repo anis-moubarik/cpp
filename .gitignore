@@ -1,12 +1,25 @@
 # Compiled Object files
+
 *.slo
 *.lo
 *.o
 
+
 # Compiled Dynamic libraries
+
 *.so
 
 # Compiled Static libraries
+
 *.lai
 *.la
 *.a
+
+*.sln
+*.suo
+*.vcxproj
+*.user
+*.filters
+/Debug
+/ipch
+/cpp2week.sdf
