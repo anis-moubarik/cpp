@@ -53,9 +53,6 @@ int main(){
 	//cin.get();
 
 	Calc calc;
-
-	cout << calc.calculate("+ 100 3.13 4") << "\n";
-
 	string calculations;
 	while(true){
 		cout << "Give us something to calculate. (type quit to quit)\n";

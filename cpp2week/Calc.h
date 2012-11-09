@@ -10,5 +10,6 @@ private:
 	double sum(std::vector<double> numbers);
 	double addition(std::vector<double> numbers);
 	double sub(std::vector<double> numbers);
+	double div(std::vector<double> numbers);
 };
 

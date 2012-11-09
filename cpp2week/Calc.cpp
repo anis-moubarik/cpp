@@ -36,8 +36,10 @@ double Calc::calculate(string parseString){
 		return sum(numbers);
 	}else if(operand == "*"){
 		return addition(numbers);
-	}else{
+	}else if(operand == "-"){
 		return sub(numbers);
+	}else{
+		return div(numbers);
 	}
 	return 0;
 }
@@ -52,13 +54,13 @@ double Calc::sum(vector<double> numbers){
 }
 
 double Calc::addition(vector<double> numbers){
-	if(numbers.size() > 2){
-		cout << "Too many numbers.\n";
-		return 0;
-	}
+	//if(numbers.size() > 2){
+	//	cout << "Too many numbers.\n";
+	//	return 0;
+	//}
 	vector<double>::iterator it;
 	double addition = numbers[0];
-	for(it = numbers.begin(); it < numbers.end(); it++){
+	for(it = numbers.begin() + 1; it < numbers.end(); it++){
 		addition *= *it;
 	}
 	return addition;
@@ -71,4 +73,13 @@ double Calc::sub(vector<double> numbers){
 		sub -= *it;
 	}
 	return sub;
+}
+
+double Calc::div(vector<double> numbers){
+	vector<double>::iterator it;
+	double div = numbers[0];
+	for(it = numbers.begin() + 1; it < numbers.end(); it++){
+		div /= *it;
+	}
+	return div;
 }
