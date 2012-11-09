@@ -5,6 +5,8 @@
 
 using namespace std;
 
+
+//slow version
 bool isPrime(int checkthis){
 
 	for(int i = 2; i < checkthis; i++){
@@ -12,9 +14,41 @@ bool isPrime(int checkthis){
 			return false;
 		}
 	}
-
 	return true;
+}
 
+//sieve of Eratosthenes
+void sieve(int max){
+	vector<int> sieve;
+	vector<int> primes;
+
+	for(int i = 1; i < max + 1; ++i){
+		sieve.push_back(i);
+	}
+	sieve[0] = 0;
+
+	for(int i = 2; i < max + 1; ++i){
+		if(sieve[i-1] != 0){
+			primes.push_back(sieve[i-1]);
+			cout << sieve[i-1] << " is a prime.\n";
+			for(int j = 2 * sieve[i-1]; j < max + 1; j+= sieve[i-1]){
+				sieve[j-1]=0;
+			}
+		}
+	}
+
+
+}
+
+
+void printPrimes(int max){
+	for(int i = 2; i <= max; i++){
+		if(isPrime(i)){
+			cout << i << " is prime.\n";
+		}else{
+			cout << i << " is not prime.\n";
+		}
+	}
 }
 
 int main(){
@@ -51,6 +85,9 @@ int main(){
 
 	//cout<<"\n";
 	//cin.get();
+
+	printPrimes(11);
+	sieve(11);
 
 	Calc calc;
 	string calculations;
