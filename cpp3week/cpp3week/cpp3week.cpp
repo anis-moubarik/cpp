@@ -3,8 +3,8 @@
 #include <string>
 
 using namespace std;
-template <typename T>
 
+template <typename T>
 vector<T> reverseVectorFirst(vector<T> v){
 	vector<T> newVector;
 	for(int i = v.size()-1; i >= 0; i--){
@@ -38,7 +38,7 @@ int main(){
 	cout << "\n";
 	vector<int> rv1 = reverseVectorFirst(v1);
 	for(int i : rv1){
-		cout << rv1[i];
+		cout << i;
 	}
 	cout << "\n";
 
