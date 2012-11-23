@@ -12,5 +12,6 @@ private:
 	size_t size_;
 	size_t top_;
 	int * array_;
+	void check();
 };
 #endif

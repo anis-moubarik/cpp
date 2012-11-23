@@ -1,4 +1,5 @@
 #include <iostream>
+#include <assert.h>
 #include "IntStack.h"
 
 
@@ -10,6 +11,7 @@ void IntStack::push(int i)
 {
 	if(top_ == size_) throw std::logic_error("stack overflow");
 	array_[top_++] = i;
+	check();
 }
 
 IntStack::IntStack(IntStack const& stack)
@@ -17,6 +19,7 @@ IntStack::IntStack(IntStack const& stack)
 		for(size_t i = 0; i < top_; i++){
 			array_[i] = stack.array_[i];
 		}
+		check();
 }
 
 IntStack::~IntStack ()
@@ -30,6 +33,20 @@ int IntStack::pop()
 	int n = array_[top_-1];
 	array_[top_-1] = NULL;
 	top_ = top_-1;
+	check();
 	return n;
 
+}
+
+IntStack& IntStack::operator=(IntStack const& is){
+	std::copy(is.array_, is.array_+is.size_, array_);
+	size_ = is.size_;
+	top_ = is.top_;
+	check();
+	return *this;
+}
+
+void IntStack::check(){
+	assert(0 <= size_ && size_ <= INT_MAX);
+	assert(top_ <= size_);
 }

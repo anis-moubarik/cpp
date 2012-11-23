@@ -49,5 +49,10 @@ int main()
 	is.push(43942);
 	std::cout<<is.pop()<<"\n";
 
+	IntStack is2;
+	is2 = is;
+	std::cout<<is2.pop()<<"\n";
+	std::cout<<is.pop()<<"\n";
+
 	return 0;
 }
