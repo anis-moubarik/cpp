@@ -18,8 +18,3 @@ std::string SList::pop_front()
 	head = newn->getNext();
 	return newn->getData();
 }
-
-Node& SList::front()
-{
-	return *head;
-}
